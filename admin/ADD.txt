@@ -1,12 +1,36 @@
-8.35.211.15#CF优选-电信
-8.35.211.27#CF优选-电信
-173.245.59.55#CF优选-电信
-8.35.211.217#CF优选-电信
-172.67.77.161#CF优选-联通
-104.26.13.56#CF优选-联通
-104.26.5.240#CF优选-联通
-172.67.75.246#CF优选-联通
-162.159.152.191#CF优选-移动
-104.19.48.174#CF优选-移动
-104.19.45.95#CF优选-移动
-104.19.45.47#CF优选-移动
+wto.org#🛰️ CF-1
+time.is#🛰️ CF-2
+iloveimg.com#🛰️ CF-3
+pastebin.com#🛰️ CF-4
+berkeley.edu#🛰️ CF-5
+onetrust.com#🛰️ CF-6
+voguehk.com#🛰️ CF-7
+anydesk.com#🛰️ CF-8
+sagepub.com#🛰️ CF-9
+ipify.org#🛰️ CF-10
+unpkg.com#🛰️ CF-11
+iso.org#🛰️ CF-12
+themeforest.net#🛰️ CF-13
+genius.com#🛰️ CF-14
+kick.com#🛰️ CF-15
+btloader.com#🛰️ CF-16
+worldcurling.org#🛰️ CF-17
+perplexity.ai#🛰️ CF-18
+letterboxd.com#🛰️ CF-19
+savefrom.net#🛰️ CF-20
+remove.bg#🛰️ CF-21
+getbootstrap.com#🛰️ CF-22
+metamask.io#🛰️ CF-23
+git-scm.com#🛰️ CF-24
+laravel.com#🛰️ CF-25
+getgrass.io#🛰️ CF-26
+tesla.services#🛰️ CF-27
+castbox.fm#🛰️ CF-28
+rustdesk.com#🛰️ CF-29
+wireshark.org#🛰️ CF-30
+symfony.com#🛰️ CF-31
+vivaldi.com#🛰️ CF-32
+tgstat.ru#🛰️ CF-33
+stylishmum.co.uk#🛰️ CF-34
+thermos.co.uk#🛰️ CF-35
+dellonda.co.uk#🛰️ CF-36
