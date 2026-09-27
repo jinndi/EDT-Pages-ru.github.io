@@ -11611,7 +11611,7 @@
 
 	<template id="onlineOptimizeTemplate">
 		<!doctype html>
-		<html lang="zh-CN">
+		<html lang="ru-RU">
 
 		<head>
 			<meta charset="utf-8">
@@ -13764,7 +13764,7 @@
         <div class="network-warning-modal" id="networkWarningModal">
           <div class="network-warning-body">
             <div class="network-warning-heading" id="networkWarningHeading">Критическое предупреждение</div>
-            <div class="network-warning-title" id="networkWarningTitle">Текущий сетевой маршрут не является прямым (Direct CN)</div>
+            <div class="network-warning-title" id="networkWarningTitle">Текущий сетевой маршрут не является прямым (Direct RU)</div>
             <div class="network-warning-message" id="networkWarningMessage"></div>
             <div class="network-warning-summary" id="networkWarningSummary"></div>
             <details class="network-warning-details" id="networkWarningDetails" hidden>
@@ -14184,7 +14184,7 @@
 				async function ensureCnNetworkBeforeAction({ button, statusEl, idleHtml }) {
           if (state.networkChecking) return false;
           if (button) button.innerHTML = `${svgPulseIcon()}Проверка сети`;
-          if (statusEl) statusEl.textContent = "Проверка наличия прямого соединения (CN)";
+          if (statusEl) statusEl.textContent = "Проверка наличия прямого соединения (RU)";
           const allowed = await refreshCnNetwork({ resetResults: false, stopRuns: false });
           if (!allowed) {
             if (button && idleHtml) button.innerHTML = idleHtml;
@@ -14286,7 +14286,7 @@
           return {
             kind: "non-cn",
             heading: "Критическое предупреждение",
-            title: "Текущий сетевой маршрут не является прямым (Direct CN)",
+            title: "Текущий сетевой маршрут не является прямым (Direct RU)",
             message: "Убедитесь, что ваш браузер не использует прокси, VPN или зарубежное подключение.\nОнлайн-подбор работает только при прямом соединении!\nВ текущей сети онлайн-подбор недоступен, попробуйте использовать «Локальный подбор».",
             rows: nonCn,
             details: completed
@@ -14395,14 +14395,14 @@
 
 				async function detectStack(family, host) {
 					const { endpoint, data } = await fetchJsonFromFastestEndpoint(buildDetectEndpoints(family, host), "ip.json", 6500);
-					const allowed = data.country === "CN";
+					const allowed = data.country === "RU";
 					return {
 						status: "done",
 						allowed,
 						endpoint,
 						ip: data.ip || "",
 						ipType: data.ipType || family,
-						country: data.country || "未知",
+						country: data.country || "Unknown",
 						cnIspCode: data.cnIspCode || "",
 						preferredType: preferredTypeFromCnIspCode(data.cnIspCode),
 						colo: data.colo || "",
@@ -14462,9 +14462,9 @@
             card.classList.add("is-hidden");
             card.classList.add("is-unavailable");
             value.textContent = "Недоступно";
-            if (note) note.textContent = "Вне сети CN";
+            if (note) note.textContent = "Вне сети RU";
             tag.className = "tag bad";
-            tag.textContent = info.country || "Не Direct CN";
+            tag.textContent = info.country || "Не Direct RU";
             return;
           }
 
@@ -14747,7 +14747,7 @@
 					if (data.ip && (data.ip === state.ipv4 || data.ip === state.ipv6)) return true;
 					const country = String(data.country || "").toUpperCase();
 					const cnIspCode = String(data.cnIspCode || "").toLowerCase();
-					return country === "CN" && cnIspCode !== "other";
+					return country === "RU" && cnIspCode !== "other";
 				}
 
 				function officialPreferredType(data) {
