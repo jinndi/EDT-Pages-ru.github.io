@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ru-RU">
 
 <head>
 	<meta charset="UTF-8">
@@ -10727,7 +10727,7 @@
 										title="Специальная функция фрагментации TLS в Shadowrocket"
 										onchange="handleTLSFragmentChange('Shadowrocket'); markModified('config')">
 									<label for="tlsFragmentShadowrocket" class="checkbox-label"
-										title="Специальная функция фрагментации TLS в Shadowrocket">Включить фрагментацию (Shadowrocket)</label>
+										title="Специальная функция фрагментации TLS в Shadowrocket">Фрагментация TLS (Shadowrocket)</label>
 								</div>
 							</div>
 						</div>
@@ -10738,7 +10738,7 @@
 									<input type="checkbox" id="tlsFragmentHapp" title="Функциональность фрагментации TLS, специфичная для клиентов Happ."
 										onchange="handleTLSFragmentChange('Happ'); markModified('config')">
 									<label for="tlsFragmentHapp" class="checkbox-label"
-										title="Функциональность фрагментации TLS, специфичная для клиентов Happ.">Включить фрагментацию (Happ)</label>
+										title="Функциональность фрагментации TLS, специфичная для клиентов Happ.">Фрагментация TLS (Happ)</label>
 								</div>
 							</div>
 						</div>
@@ -16420,22 +16420,22 @@
 
       <div class="api-form-group chain-proxy-form">
         <div class="api-form-row-item">
-          <label for="chainProxyNodeName">Название узла:</label>
+          <label for="chainProxyNodeName">Название:</label>
           <input type="text" id="chainProxyNodeName" title="Название узла" placeholder="Цепочка прокси">
         </div>
 
         <div class="api-form-row-item">
-          <label for="chainProxyHost">Оптимизированный узел:</label>
+          <label for="chainProxyHost">Узел:</label>
           <div class="chain-proxy-preferred-wrapper">
             <input type="text" id="chainProxyHost" title="Домен или IP" placeholder="Текущий домен страницы">
             <span class="proxy-protocol-separator">:</span>
             <input type="text" id="chainProxyPort" title="Порт 1~65535, можно оставить пустым" inputmode="numeric"
-              placeholder="Необязательно" oninput="normalizeChainProxyPortInput()">
+              placeholder="Порт" oninput="normalizeChainProxyPortInput()">
           </div>
         </div>
 
         <div class="api-form-row-item chain-proxy-protocol-row">
-          <label for="chainProxyProtocol">Цепочка прокси:</label>
+          <label for="chainProxyProtocol">Прокси:</label>
           <div class="chain-proxy-input-wrapper">
             <select id="chainProxyProtocol" title="Протокол цепочки прокси" onchange="resetChainProxyValidation()">
               <option value="socks5">socks5</option>
@@ -17813,8 +17813,8 @@
 
 			// Сортировка по регионам: сначала внутренние рейсы, затем международные.
 			const sortedSites = [...latencySites].sort((a, b) => {
-				const aIsChina = a.region === 'CN' ? 0 : 1;
-				const bIsChina = b.region === 'CN' ? 0 : 1;
+				const aIsChina = a.region === 'RU' ? 0 : 1;
+				const bIsChina = b.region === 'RU' ? 0 : 1;
 				return aIsChina - bIsChina;
 			});
 
@@ -27702,7 +27702,7 @@
         if (proxyData) {
           const city = proxyData.city || 'Неизвестно';
           const country = proxyData.country || 'Неизвестно';
-          const countryName = proxyData.country_cn || 'Неизвестно';
+          const countryName = proxyData.country_en || 'Неизвестно';
           const clientIp = proxyData.clientIp || ip;
           const asn = proxyData.asn || 'Неизвестно';
           const asOrganization = proxyData.asOrganization || 'Неизвестно';
@@ -28177,7 +28177,7 @@
         </div>
         <div class="ip-detail-popup-item">
           <span class="ip-detail-popup-label">Страна:</span>
-          <span class="ip-detail-popup-value">[${proxyData.country || '-'}]${proxyData.country_cn || ''}</span>
+          <span class="ip-detail-popup-value">[${proxyData.country || '-'}]${proxyData.country_en || ''}</span>
         </div>
         <div class="ip-detail-popup-item">
           <span class="ip-detail-popup-label">Входной IP:</span>
@@ -28233,7 +28233,7 @@
               proxy: item.ip,
               ip: item.ip,
               country: item.meta?.country || 'Unknown',
-              country_cn: item.meta?.country_cn || 'Неизвестно',
+              country_cn: item.meta?.country_en || 'Неизвестно',
               country_en: item.meta?.country_en || 'Unknown',
               country_emoji: item.meta?.country_emoji || '🏳️',
               city: item.meta?.city || 'Неизвестно',
@@ -28290,7 +28290,7 @@
 
         continentMap[continent].countries[country] = {
           count: proxies.length,
-          name: proxy.country_cn || country,
+          name: proxy.country_en || country,
           emoji: proxy.country_emoji || ''
         };
       }
