@@ -27498,7 +27498,7 @@
                       <span class="ip-detail-value">${data.is_satellite ? '<span class="success-text">🛰️ Да</span>' : 'Нет'}</span>
                     </div>
                     <div class="ip-detail-item" title="Имеются ли у этого IP известные записи о злоупотреблениях (спам, DDoS-атаки, вредоносное сканирование и т.д.). Злоумышленные IP обычно блокируются системами безопасности или имеют ограничения">
-                      <span class="ip-detail-label">Известные злоупотребления</span>
+                      <span class="ip-detail-label">Злоупотребления</span>
                       <span class="ip-detail-value">${data.is_abuser ? '<span class="danger-text">⚠️ Да</span>' : '✅ Нет'}</span>
                     </div>
                     <div class="ip-detail-item" title="Является ли данный IP фиктивным IP (Bogon IP), т. е. зарезервированным, частным или нераспределенным адресом. Такие IP не должны появляться в интернете и могут указывать на аномальный трафик или ловушку (honeypot)">
@@ -27527,8 +27527,8 @@
             attributionControl: false
           }).setView([lat + 5, lng], 4); // Смещаем центр вверх, чтобы маркер оказался ниже центра области видимости
 
-          L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
-            subdomains: '1234',
+					L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            subdomains: 'abc',
             minZoom: 1,
             maxZoom: 18
           }).addTo(detailMap);
