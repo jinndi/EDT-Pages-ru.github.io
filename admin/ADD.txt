@@ -1,12 +1,40 @@
-8.35.211.15#CF优选-电信
-8.35.211.27#CF优选-电信
-173.245.59.55#CF优选-电信
-8.35.211.217#CF优选-电信
-172.67.77.161#CF优选-联通
-104.26.13.56#CF优选-联通
-104.26.5.240#CF优选-联通
-172.67.75.246#CF优选-联通
-162.159.152.191#CF优选-移动
-104.19.48.174#CF优选-移动
-104.19.45.95#CF优选-移动
-104.19.45.47#CF优选-移动
+wto.org#☢️ CF_wto
+time.is#☢️ CF_time
+iloveimg.com#☢️ CF_iloveimg
+pastebin.com#☢️ CF_pastebin
+berkeley.edu#☢️ CF_berkeley
+onetrust.com#☢️ CF_onetrust
+voguehk.com#☢️ CF_voguehk
+anydesk.com#☢️ CF_anydesk
+sagepub.com#☢️ CF_sagepub
+ipify.org#☢️ CF_ipify
+unpkg.com#☢️ CF_unpkg
+iso.org#☢️ CF_iso
+themeforest.net#☢️ CF_themeforest
+genius.com#☢️ CF_genius
+kick.com#☢️ CF_kick
+btloader.com#☢️ CF_btloader
+worldcurling.org#☢️ CF_worldcurling
+perplexity.ai#☢️ CF_perplexity
+letterboxd.com#☢️ CF_letterboxd
+savefrom.net#☢️ CF_savefrom
+remove.bg#☢️ CF_remove
+getbootstrap.com#☢️ CF_getbootstrap
+metamask.io#☢️ CF_metamask
+git-scm.com#☢️ CF_git-scm
+laravel.com#☢️ CF_laravel
+getgrass.io#☢️ CF_getgrass
+tesla.services#☢️ CF_tesla
+castbox.fm#☢️ CF_castbox
+rustdesk.com#☢️ CF_rustdesk
+wireshark.org#☢️ CF_wireshark
+symfony.com#☢️ CF_symfony
+vivaldi.com#☢️ CF_vivaldi
+tgstat.ru#☢️ CF_tgstat
+gist.ai#☢️ CF_gist
+safe.ai#☢️ CF_safe
+ppy.sh#☢️ CF_ppy
+flightaware.com#☢️ CF_flightaware
+stylishmum.co.uk#☢️ CF_stylishmum
+thermos.co.uk#☢️ CF_thermos
+dellonda.co.uk#☢️ CF_dellonda

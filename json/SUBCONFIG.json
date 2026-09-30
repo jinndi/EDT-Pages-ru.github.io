@@ -1,0 +1,116 @@
+[
+    {
+        "label": "Правила ACL4SSR",
+        "options": [
+            {
+                "label": "Версия по умолчанию: полные группы ACL4SSR_Online",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online.ini"
+            },
+            {
+                "label": "Расширенная блокировка рекламы ACL4SSR_Online_AdblockPlus",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini"
+            },
+            {
+                "label": "Многонациональные группы ACL4SSR_Online_MultiCountry",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_MultiCountry.ini"
+            },
+            {
+                "label": "Без автоматического замера скорости ACL4SSR_Online_NoAuto",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_NoAuto.ini"
+            },
+            {
+                "label": "Без правил блокировки рекламы ACL4SSR_Online_NoReject",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_NoReject.ini"
+            },
+            {
+                "label": "Урезанная версия ACL4SSR_Online_Mini",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Mini.ini"
+            },
+            {
+                "label": "Урезанная версия с расширенной блокировкой рекламы ACL4SSR_Online_Mini_AdblockPlus",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Mini_AdblockPlus.ini"
+            },
+            {
+                "label": "Урезанная версия без автотеста скорости ACL4SSR_Online_Mini_NoAuto",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Mini_NoAuto.ini"
+            },
+            {
+                "label": "Урезанная версия с отказоустойчивостью (Fallback) ACL4SSR_Online_Mini_Fallback",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Mini_Fallback.ini"
+            },
+            {
+                "label": "Урезанная версия (автотест скорости, отказоустойчивость, балансировка нагрузки) ACL4SSR_Online_Mini_MultiMode",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini"
+            },
+            {
+                "label": "Урезанная версия с Гонконгом, США и Японией ACL4SSR_Online_Mini_MultiCountry",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Mini_MultiCountry.ini"
+            },
+            {
+                "label": "Все группы, для активных пользователей ACL4SSR_Online_Full",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Full.ini"
+            },
+            {
+                "label": "Все группы, мультирежим, для активных пользователей ACL4SSR_Online_Full_MultiMode",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"
+            },
+            {
+                "label": "Все группы без автотеста скорости, для активных пользователей ACL4SSR_Online_Full_NoAuto",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
+            },
+            {
+                "label": "Все группы, расширенная блокировка рекламы, для активных пользователей ACL4SSR_Online_Full_AdblockPlus",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
+            },
+            {
+                "label": "Все группы, полный набор для Netflix, для активных пользователей ACL4SSR_Online_Full_Netflix",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Full_Netflix.ini"
+            },
+            {
+                "label": "Все группы, детализированный Google, для активных пользователей ACL4SSR_Online_Full_Google",
+                "value": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/config/ACL4SSR_Online_Full_Google.ini"
+            }
+        ]
+    },
+    {
+        "label": "Пользовательские правила CM",
+        "options": [          
+            {
+                "label": "Версия по умолчанию с определением регионов Гонконг/США CM_Online",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online.ini"
+            },
+            {
+                "label": "Урезанная версия (автотест, отказоустойчивость, балансировка) с определением CloudFlare CDN CM_Online_Mini_MultiMode_CF",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Mini_MultiMode_CF.ini"
+            },            
+            {
+                "label": "Урезанная версия без автотеста (сокращает ошибки -1) с определением CloudFlare CDN CM_Online_Mini_NoAuto_CF",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Mini_NoAuto_CF.ini"
+            },  
+            {
+                "label": "С определением регионов Гонконг/США и балансировкой нагрузки CM_Online_MultiCountry",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_MultiCountry.ini"
+            },
+            {
+                "label": "Определение Гонконга/США и CloudFlare CDN, балансировка нагрузки (специально для CF-узлов) CM_Online_MultiCountry_CF",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_MultiCountry_CF.ini"
+            },
+            {
+                "label": "С определением групп по множеству регионов CM_Online_Full",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Full.ini"
+            },
+            {
+                "label": "Множество регионов и группы CloudFlare CDN (специально для CF-узлов) CM_Online_Full_CF",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Full_CF.ini"
+            },
+            {
+                "label": "Множество регионов с балансировкой нагрузки CM_Online_Full_MultiMode",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"
+            },
+            {
+                "label": "Множество регионов и CloudFlare CDN с балансировкой нагрузки (специально для CF-узлов) CM_Online_Full_MultiMode_CF",
+                "value": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Full_MultiMode_CF.ini"
+            }
+        ]
+    }
+]
