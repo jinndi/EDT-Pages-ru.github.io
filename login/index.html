@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="robots" content="noindex, nofollow">
-	<title>登录设置页面</title>
+	<title>Логин</title>
 	<style>
 		* {
 			margin: 0;
@@ -735,12 +735,12 @@
 							d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
 					</svg>
 				</div>
-				<h1 class="page-title">登录设置页面</h1>
+				<h1 class="page-title">Вход в админку</h1>
 			</div>
 			<form id="loginForm" class="page-form">
 				<div class="form-group">
 					<div class="input-wrapper">
-						<input type="password" id="password" name="password" class="with-icon" placeholder="请输入您的管理员密码"
+						<input type="password" id="password" name="password" class="with-icon" placeholder="Пароль администратора"
 							required disabled>
 						<svg class="input-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<path
@@ -748,11 +748,11 @@
 						</svg>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary btn-full-width" id="loginBtn" disabled>立即登录</button>
+				<button type="submit" class="btn btn-primary btn-full-width" id="loginBtn" disabled>Войти</button>
 				<div id="errorMsg" class="login-error login-error-hidden"></div>
 			</form>
 			<div class="footer-hint">
-				由 <a href="https://github.com/cmliu/edgetunnel" target="_blank" rel="noopener">edgetunnel</a> 强力驱动
+				Работает на <a href="https://github.com/jinndi/edgetunnel.ru" target="_blank" rel="noopener">edgetunnel.ru</a>
 			</div>
 		</div>
 	</div>
@@ -938,79 +938,79 @@
 		});
 
 		document.getElementById('loginForm').addEventListener('submit', async (e) => {
-			e.preventDefault();
+      e.preventDefault();
 
-			const password = document.getElementById('password').value;
-			const loginBtn = document.getElementById('loginBtn');
-			const errorMsg = document.getElementById('errorMsg');
-			const passwordInput = document.getElementById('password');
+      const password = document.getElementById('password').value;
+      const loginBtn = document.getElementById('loginBtn');
+      const errorMsg = document.getElementById('errorMsg');
+      const passwordInput = document.getElementById('password');
 
-			// 清除之前的错误信息
-			errorMsg.classList.add('login-error-hidden');
+      // Очистка предыдущего сообщения об ошибке
+      errorMsg.classList.add('login-error-hidden');
 
-			// 按钮加载状态
-			loginBtn.disabled = true;
-			loginBtn.classList.add('btn-loading');
+      // Состояние загрузки кнопки
+      loginBtn.disabled = true;
+      loginBtn.classList.add('btn-loading');
 
-			// 用户主动登录，重置自动重定向计数器
-			sessionStorage.removeItem('_auth_auto_redirect');
+      // Пользователь вошел вручную, сбрасываем счетчик автоматического перенаправления
+      sessionStorage.removeItem('_auth_auto_redirect');
 
-			try {
-				const response = await fetch('/login', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded',
-					},
-					body: 'password=' + encodeURIComponent(password),
-					redirect: 'manual'
-				});
+      try {
+        const response = await fetch('/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: 'password=' + encodeURIComponent(password),
+          redirect: 'manual'
+        });
 
-				// ====== 关键修复：处理 Worker 的 auth cookie 短路逻辑 ======
-				// Worker /login 路由在处理 POST 之前会先检查 auth cookie：
-				//   if (authCookie == MD5MD5(...)) return 302 → /admin
-				// 如果 cookie 仍然有效（如从 /admin 刷新被踢回 /login 的场景），
-				// Worker 不会处理 POST，而是直接返回 302。
-				// fetch 默认会自动跟随 302 → GET /admin → 返回 HTML → 前端误判为"密码错误"。
-				// 使用 redirect: 'manual' 拦截 302，直接跳转 /admin。
-				if (response.type === 'opaqueredirect') {
-					// Worker 返回了重定向 = auth cookie 仍然有效，直接进 /admin
-					window.location.replace('/admin');
-					return;
-				}
+        // ====== Ключевое исправление: обработка логики короткого замыкания auth cookie в Worker ======
+        // Маршрут /login в Worker перед обработкой POST сначала проверяет auth cookie:
+        //   if (authCookie == MD5MD5(...)) return 302 → /admin
+        // Если cookie все еще действителен (например, при сценарии выброса на /login после обновления страницы в /admin),
+        // Worker не обрабатывает POST, а сразу возвращает 302.
+        // По умолчанию fetch автоматически следует за 302 → GET /admin → возвращает HTML → фронтенд ошибочно принимает это за «Неверный пароль».
+        // Используем redirect: 'manual' для перехвата 302 и прямого перехода на /admin.
+        if (response.type === 'opaqueredirect') {
+          // Worker вернул редирект = auth cookie все еще действителен, сразу переходим в /admin
+          window.location.replace('/admin');
+          return;
+        }
 
-				if (response.ok) {
-					const contentType = response.headers.get('content-type');
+        if (response.ok) {
+          const contentType = response.headers.get('content-type');
 
-					if (contentType && contentType.includes('application/json')) {
-						// 返回的是JSON，说明登录成功
-						const data = await response.json();
-						if (data.success) {
-							// 登录成功，使用 replace 避免留下 /login 在浏览器历史中
-							window.location.replace('/admin');
-						}
-					} else {
-						// 返回的是HTML，说明密码错误
-						// 注意：不清理 cookie —— auth cookie 是 HttpOnly，JS 无法操作；
-						// 清理非 HttpOnly cookie 会破坏其他功能状态，弊大于利
-						errorMsg.textContent = '密码错误，请重试';
-						errorMsg.classList.remove('login-error-hidden');
-						passwordInput.focus();
-						passwordInput.select();
-					}
-				} else {
-					errorMsg.textContent = '登录失败，请重试 (' + response.status + ')';
-					errorMsg.classList.remove('login-error-hidden');
-				}
-			} catch (error) {
-				console.error('登录错误:', error);
-				errorMsg.textContent = '网络错误，请检查连接';
-				errorMsg.classList.remove('login-error-hidden');
-			} finally {
-				// 恢复按钮状态
-				loginBtn.disabled = false;
-				loginBtn.classList.remove('btn-loading');
-			}
-		});
+          if (contentType && contentType.includes('application/json')) {
+            // Возвращается JSON, что означает успешный вход
+            const data = await response.json();
+            if (data.success) {
+              // Вход успешен, используем replace, чтобы не оставлять /login в истории браузера
+              window.location.replace('/admin');
+            }
+          } else {
+            // Возвращается HTML, что означает неверный пароль
+            // Примечание: не очищаем cookie — auth cookie имеет флаг HttpOnly, JavaScript не может с ним работать;
+            // очистка не-HttpOnly cookie нарушит состояние других функций, вреда от этого больше
+            errorMsg.textContent = 'Неверный пароль, попробуйте еще раз';
+            errorMsg.classList.remove('login-error-hidden');
+            passwordInput.focus();
+            passwordInput.select();
+          }
+        } else {
+          errorMsg.textContent = 'Вход не удался, попробуйте еще раз (' + response.status + ')';
+          errorMsg.classList.remove('login-error-hidden');
+        }
+      } catch (error) {
+        console.error('Ошибка входа в систему:', error);
+        errorMsg.textContent = 'Ошибка сети, проверьте подключение';
+        errorMsg.classList.remove('login-error-hidden');
+      } finally {
+        // Восстановление состояния кнопки
+        loginBtn.disabled = false;
+        loginBtn.classList.remove('btn-loading');
+      }
+    });
 	</script>
 </body>
 
