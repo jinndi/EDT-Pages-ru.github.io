@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ru-RU">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="robots" content="noindex, nofollow">
-	<title>配置错误</title>
+	<title>Ошибка конфигурации</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null">
@@ -598,18 +598,18 @@
 						<path fill="#fff" d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
 					</svg>
 				</div>
-				<h1 class="page-title">未设置 管理员密码</h1>
+				<h1 class="page-title">Пароль администратора не установлен</h1>
 			</div>
-			<span class="error-banner">请设置环境变量，变量名称为 <span class="code-chip">ADMIN</span>，值为你的管理员密码。</span>
+			<span class="error-banner">Установите переменную окружения <span class="code-chip">ADMIN</span>, указав в качестве значения пароль администратора.</span>
 			<div class="footer-hint">
-				由 <a href="https://github.com/cmliu/edgetunnel" target="_blank" rel="noopener">edgetunnel</a> 强力驱动
+				Работает на <a href="https://github.com/jinndi/edgetunnel.ru" target="_blank" rel="noopener">edgetunnel.ru</a>
 			</div>
 		</div>
 	</div>
 
 	<script>
-		// 主题初始化：与 admin 后台同源（localStorage key 'theme' + html.dark-mode 类）
-		// 首访跟随系统 prefers-color-scheme，手动切换写入 localStorage
+		// Инициализация темы: как в панели администратора (ключ localStorage 'theme' + класс html.dark-mode)
+		// При первом посещении тема определяется по системной настройке prefers-color-scheme, ручное переключение сохраняется в localStorage
 		(function () {
 			var stored = null;
 			try { stored = localStorage.getItem('theme'); } catch (e) { }
